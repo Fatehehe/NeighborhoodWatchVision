@@ -1,0 +1,184 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 2.0 (494.100.6)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    reorder nameChildren = ["Gate", "FenceShort", "FenceShort_1", "FenchPole", "Fence", "Fence_1", "Houses", "Fences"]
+    def "Gate" (
+        active = true
+        references = @../Assets/Gate.usda@
+    )
+    {
+        float3 xformOp:scale = (3.5, 3.5, 3.5)
+        float3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Gate"
+        {
+            over "Left_Gate" (
+                customData = {
+                    float3 rotationEulerHint = (0, 0, 0)
+                }
+            )
+            {
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1.206763505935669, 0, 1.504814624786377)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+        }
+    }
+
+    def Scope "Houses" (
+        active = true
+    )
+    {
+        reorder nameChildren = ["House7", "House3", "House6", "House4", "House1"]
+        def "House7" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (0, 1.5707963, 0)
+            }
+            references = @../Assets/House7.usda@
+        )
+        {
+            quatf xformOp:orient = (0.7086356, 0, 0.7055746, 0)
+            float3 xformOp:scale = (0.8, 0.79999995, 0.8)
+            float3 xformOp:translate = (12.677499, 0, 3.2441773)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def "House3" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (0, -1.5707963, 0)
+            }
+            references = @../Assets/House3.usda@
+        )
+        {
+            quatf xformOp:orient = (0.7071067, 0, -0.70710677, 0)
+            float3 xformOp:scale = (0.7999999, 0.7999999, 0.7999999)
+            float3 xformOp:translate = (21.650387, 6.854534e-7, 7.9254274)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def "House6" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (0, 1.5707963, 0)
+            }
+            references = @../Assets/House6.usda@
+        )
+        {
+            reorder nameChildren = ["House6", "Material"]
+            quatf xformOp:orient = (0.7071067, 0, 0.70710677, 0)
+            float3 xformOp:scale = (0.7999999, 0.7999999, 0.7999999)
+            float3 xformOp:translate = (12.900479, 5.9604645e-8, 13.030213)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def "House4" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (0, -1.5707963, 0)
+            }
+            references = @../Assets/House4.usda@
+        )
+        {
+            quatf xformOp:orient = (0.7141805, 0, -0.69996136, 0)
+            float3 xformOp:scale = (0.8, 0.8, 0.8)
+            float3 xformOp:translate = (23.361538, 9.834766e-7, 18.585201)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def "House1" (
+            active = true
+            references = @../Assets/House1.usda@
+        )
+        {
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (0.8, 0.8, 0.8)
+            float3 xformOp:translate = (12.41726, 0, 21.067863)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+    }
+
+    def Scope "Fences" (
+        active = true
+    )
+    {
+        reorder nameChildren = ["FenceShort", "FenceShort_1", "FenchPole", "Fence", "Fence_1"]
+        def "FenceShort" (
+            active = true
+            references = @../Assets/FenceShort.usda@
+        )
+        {
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (-8.561655, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def "FenceShort_1" (
+            active = true
+            references = @../Assets/FenceShort.usda@
+        )
+        {
+            float2 ui:nodegraph:node:pos = (20, 20)
+            int ui:nodegraph:node:stackingOrder = 1
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (4.442206, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def "FenchPole" (
+            active = true
+            references = @../Assets/FenchPole.usda@
+        )
+        {
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (8.677511, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def "Fence" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (0, -1.5707963, 0)
+            }
+            references = @../Assets/Fence.usda@
+        )
+        {
+            quatf xformOp:orient = (0.70710677, 0, -0.7071067, 0)
+            float3 xformOp:scale = (0.99999994, 0.99999994, 0.99999994)
+            float3 xformOp:translate = (8.655271, 0.0000025629997, 13.515922)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def "Fence_1" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (0, -1.5707963, 0)
+            }
+            references = @../Assets/Fence.usda@
+        )
+        {
+            float2 ui:nodegraph:node:pos = (20, 20)
+            int ui:nodegraph:node:stackingOrder = 1
+            quatf xformOp:orient = (0.70710677, 0, -0.7071067, 0)
+            float3 xformOp:scale = (0.99999994, 0.99999994, 0.99999994)
+            float3 xformOp:translate = (8.655413, 0.0000037401915, 26.843721)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+    }
+}
+

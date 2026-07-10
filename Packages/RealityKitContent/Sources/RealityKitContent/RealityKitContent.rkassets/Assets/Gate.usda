@@ -1,0 +1,118 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 2.0 (494.100.6)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    reorder nameChildren = ["Gate", "Pole", "Gate_1"]
+    def "Gate" (
+        active = true
+        references = @../Mesh/Gate.usdc@
+    )
+    {
+        quatf xformOp:orient = (0.70710677, -0.70710677, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (-0.12378587, -1.4914346, 6.891787e-8)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Left_Gate" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Root/Gate_1> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+
+            over "Mesh_137" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Root/Gate_1> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+            }
+        }
+
+        over "Right_Gate" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Root/Gate_1> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+
+            over "Mesh_132" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Root/Gate_1> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+            }
+        }
+
+        over "Left_Pole"
+        {
+            over "Mesh_001" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Root/Pole> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+            }
+        }
+
+        over "Right_POle"
+        {
+            over "Mesh" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Root/Pole> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+            }
+        }
+    }
+
+    def Material "Pole" (
+        references = @../Materials/PBR_Material.usda@</Root/UnlitMaterial>
+    )
+    {
+        asset inputs:BakedTexture = @../Texture/Gate/Gate_Concrete_TX_BaseColor.1001.png@
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Pole/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            token outputs:surface
+        }
+    }
+
+    def Material "Gate_1" (
+        references = @../Materials/PBR_Material.usda@</Root/UnlitMaterial>
+    )
+    {
+        asset inputs:BakedTexture = @../Texture/Gate/Gate_Fence_TX_BaseColor.1001.png@
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        token outputs:surface.connect = </Root/Gate_1/UsdPreviewSurface.outputs:surface>
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (0, 110.5)
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            token outputs:surface
+        }
+    }
+}
+

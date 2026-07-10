@@ -355,8 +355,8 @@ def Xform "Root"
         )
         token outputs:mtlx:surface.connect = </Root/UnlitMaterial/UnlitSurface.outputs:out>
         token outputs:realitykit:vertex
-        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (373.3162, 121.3079)
-        int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 6
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (387.12338, 143.3075)
+        int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 8
 
         def Shader "UnlitSurface"
         {
@@ -365,8 +365,9 @@ def Xform "Root"
             bool inputs:hasPremultipliedAlpha
             float inputs:opacity
             token outputs:out
-            float2 ui:nodegraph:node:pos = (118.5885, 157.3495)
-            int ui:nodegraph:node:stackingOrder = 4
+            float2 ui:nodegraph:node:pos = (138.27582, 211.63657)
+            int ui:nodegraph:node:stackingOrder = 12
+            string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["inputs:opacity", "inputs:opacityThreshold"]
         }
 
         def Shader "Image2D"

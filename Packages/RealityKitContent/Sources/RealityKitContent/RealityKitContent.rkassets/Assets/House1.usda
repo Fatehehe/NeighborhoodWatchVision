@@ -1,0 +1,65 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 2.0 (494.100.6)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    def "House1" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        customData = {
+            float3 rotationEulerHint = (1.5707965, 1.5707963, 3.1415927)
+        }
+        prepend references = @../Mesh/House1.usdc@
+    )
+    {
+        rel material:binding = None (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        quatf xformOp:orient = (-0.49999994, 0.50000006, -0.49999994, -0.5000001)
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (-7.407327, 0.7460587, -2.2396364)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "House1" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = None (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+
+            over "Plane_008" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Root/Material> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+            }
+        }
+    }
+
+    def Material "Material" (
+        references = @../Materials/PBR_Material.usda@</Root/UnlitMaterial>
+    )
+    {
+        asset inputs:BakedTexture = @../Texture/House1/Houses_house1_TX_BaseColor.1001.png@
+        token outputs:mtlx:surface
+        token outputs:realitykit:vertex
+        prepend token outputs:surface.connect = </Root/Material/UsdPreviewSurface.outputs:surface>
+
+        def Shader "UsdPreviewSurface"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            token outputs:surface
+        }
+    }
+}
+

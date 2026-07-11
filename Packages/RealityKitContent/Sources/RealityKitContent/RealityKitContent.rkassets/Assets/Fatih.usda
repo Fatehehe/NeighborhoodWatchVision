@@ -1,0 +1,32 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 2.0 (494.100.6)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    def "Fatih_Idle" (
+        active = true
+        prepend references = @../Animations/Fatih_Idle.usdc@
+    )
+    {
+        float3 xformOp:scale = (1, 1, 1)
+    }
+
+    def RealityKitComponent "AnimationLibrary"
+    {
+        token info:id = "RealityKit.AnimationLibrary"
+
+        def RealityKitAnimationFile "Fatih_Walk"
+        {
+            uniform asset file = @../Animations/Fatih_Walk.usdc@
+            uniform string name = "Fatih_Walk"
+        }
+    }
+}
+

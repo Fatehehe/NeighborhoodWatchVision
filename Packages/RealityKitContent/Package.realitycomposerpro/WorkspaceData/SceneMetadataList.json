@@ -68,6 +68,67 @@
       }
     ]
   },
+  "1A1D6A5E-548E-4C23-B816-D389C578011A" : {
+    "objectMetadataList" : [
+      [
+        "1A1D6A5E-548E-4C23-B816-D389C578011A",
+        "root",
+        "char_grp"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "1A1D6A5E-548E-4C23-B816-D389C578011A",
+        "root",
+        "_materials",
+        "Fatih_TX"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "1A1D6A5E-548E-4C23-B816-D389C578011A",
+        "root",
+        "char_grp",
+        "rig"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "1A1D6A5E-548E-4C23-B816-D389C578011A",
+        "root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "1A1D6A5E-548E-4C23-B816-D389C578011A",
+        "root",
+        "char_grp",
+        "rig",
+        "Body_Fatih"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "1A1D6A5E-548E-4C23-B816-D389C578011A",
+        "root",
+        "_materials"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
   "3B86FAFA-86E9-4E44-84DB-4F9A1EF629C1" : {
     "objectMetadataList" : [
       [
@@ -196,6 +257,27 @@
       }
     ]
   },
+  "60F2A266-7DB9-4748-872A-AD9A58ACA1BB" : {
+    "objectMetadataList" : [
+      [
+        "60F2A266-7DB9-4748-872A-AD9A58ACA1BB",
+        "root",
+        "_materials"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "60F2A266-7DB9-4748-872A-AD9A58ACA1BB",
+        "root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
   "65F6F990-A780-4474-B78B-572E0E4E273D" : {
     "objectMetadataList" : [
       [
@@ -222,15 +304,6 @@
   },
   "7392CD47-E9AE-4BFF-A2E0-48E50AA3C29C" : {
     "objectMetadataList" : [
-      [
-        "7392CD47-E9AE-4BFF-A2E0-48E50AA3C29C",
-        "Root",
-        "Streetlamp"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
       [
         "7392CD47-E9AE-4BFF-A2E0-48E50AA3C29C",
         "Root",
@@ -299,16 +372,6 @@
         "Root",
         "House1",
         "House1"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "7392CD47-E9AE-4BFF-A2E0-48E50AA3C29C",
-        "Root",
-        "Streetlamp",
-        "Cube"
       ],
       {
         "isExpanded" : true,
@@ -675,25 +738,7 @@
     "objectMetadataList" : [
       [
         "FB3E4274-D8ED-408B-8AD9-6A5190953094",
-        "Root",
-        "Cube"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "FB3E4274-D8ED-408B-8AD9-6A5190953094",
         "Root"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "FB3E4274-D8ED-408B-8AD9-6A5190953094",
-        "Root",
-        "Fences"
       ],
       {
         "isExpanded" : true,

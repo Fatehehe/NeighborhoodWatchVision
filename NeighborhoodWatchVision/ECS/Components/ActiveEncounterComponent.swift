@@ -7,7 +7,6 @@
 
 import RealityKit
 
-// Komponen untuk menyimpan data spesifik NPC dan state-nya saat ini
 struct ActiveEncounterComponent: Component {
     var data: EncounterData
     var state: EncounterState = .walkingToPost
@@ -15,10 +14,4 @@ struct ActiveEncounterComponent: Component {
     enum EncounterState {
         case walkingToPost, interrogated, dismissed, entered
     }
-}
-
-// Komponen untuk target pergerakan
-struct MoveToTargetComponent: Component {
-     var targetPosition: SIMD3<Float>
-     var speed: Float
 }

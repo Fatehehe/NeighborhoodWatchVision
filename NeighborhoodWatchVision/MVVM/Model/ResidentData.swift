@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum RoleType: String, Codable {
+public enum RoleType: String, Codable {
     case resident
     case anomaly
 }

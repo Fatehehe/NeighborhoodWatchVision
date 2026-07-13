@@ -238,17 +238,6 @@ def Xform "Root" (
         float3 xformOp:translate = (-6.6412535, 0.0000024437904, 4.721513)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
-
-    def "Fatih" (
-        active = true
-        prepend references = @../Assets/Fatih.usda@
-    )
-    {
-        quatf xformOp:orient = (0.7117866, 0, -0.7023958, 0)
-        float3 xformOp:scale = (0.9999999, 0.99999994, 0.9999999)
-        float3 xformOp:translate = (-7.1674595, 0.18828335, 5.0674753)
-        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
-    }
 }
 
 def Cube "Cube_1" (

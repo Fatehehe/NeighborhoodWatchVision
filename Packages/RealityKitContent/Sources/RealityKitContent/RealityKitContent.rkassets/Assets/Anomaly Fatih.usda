@@ -85,6 +85,7 @@ def Xform "Root"
             def Preliminary_Trigger "Trigger"
             {
                 rel affectedObjects = </Root/Alfa_Idle>
+                string identifier = "Pass"
                 token info:id = "Notification"
             }
 

@@ -1,0 +1,27 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 2.0 (494.100.6)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    def "ID_Card" (
+        active = true
+        prepend references = @../Mesh/ID_Card.usdc@
+    )
+    {
+        float3 xformOp:scale = (1, 1, 1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Mat_card"
+        {
+            asset inputs:BakedTexture = @../Texture/Cards/ID_Card_ID_Card_Fatih_BaseColor.1001.png@
+        }
+    }
+}
+

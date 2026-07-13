@@ -85,6 +85,7 @@ def Xform "Root"
             def Preliminary_Trigger "Trigger"
             {
                 rel affectedObjects = </Root/Alfa_Idle>
+                string identifier = "Pass"
                 token info:id = "Notification"
             }
 
@@ -170,7 +171,7 @@ def Xform "Root"
                 double duration = 0.3
                 uniform token info:id = "EC681494-D781-4F31-9937-09C71C38B564"
                 float3 position = (0, 0, -4.5)
-                quatf rotation = (0.70710677, -0.70710677, 1.6858739e-7, -1.06770145e-7)
+                quatf rotation = (0.707106, -0.70710593, -0.0010711377, -0.0010714129)
                 float3 scale = (0.9999999, 0.9999999, 0.9999999)
                 double startTime = 10.000000298123224
                 rel target = </Root/Alfa_Idle>
@@ -237,9 +238,10 @@ def Xform "Root"
             def RealityKitAction "Notification"
             {
                 string actionKind = "notification"
+                double duration = 0
                 uniform token info:id = "75EAEB14-D657-4FC4-BFB4-D3481F0B13BE"
                 string notificationName = "Arrived"
-                double startTime = 10.556478310386892
+                double startTime = 10.278237757815978
                 rel target = </Root/Alfa_Idle>
             }
         }

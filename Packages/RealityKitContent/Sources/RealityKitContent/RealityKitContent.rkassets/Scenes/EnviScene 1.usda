@@ -14,7 +14,7 @@ def Xform "Root" (
     }
 )
 {
-    reorder nameChildren = ["Gate", "Houses", "Fences", "Cube", "PosSatpam", "StreetLamp", "StreetLamp_1", "StreetLamp_2", "StreetLamp_3", "StreetLamp_4", "StreetLamps"]
+    reorder nameChildren = ["Gate", "Houses", "Fences", "Cube", "PosSatpam", "StreetLamp", "StreetLamp_1", "StreetLamp_2", "StreetLamp_3", "StreetLamp_4", "StreetLamps", "Timeline"]
     quatf xformOp:orient = (0.7117866, 0, 0.7023957, 0)
     float3 xformOp:translate = (-4.971842, -0.18828337, -7.2341256)
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
@@ -239,15 +239,102 @@ def Xform "Root" (
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
-    def "Fatih" (
+    def Scope "Scope" (
         active = true
-        prepend references = @../Assets/Fatih.usda@
     )
     {
-        quatf xformOp:orient = (0.7117866, 0, -0.7023958, 0)
-        float3 xformOp:scale = (0.9999999, 0.99999994, 0.9999999)
-        float3 xformOp:translate = (-7.1674595, 0.18828335, 5.0674753)
+        def "StreetLamp" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (0, -3.1415918, 0)
+            }
+            references = @../Assets/StreetLamp.usda@
+        )
+        {
+            quatf xformOp:orient = (4.3596202e-8, 0, 1, 0)
+            float3 xformOp:scale = (0.9999998, 0.9999999, 0.9999998)
+            float3 xformOp:translate = (-6.1945825, 0.18828334, 8.550932)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def "StreetLamp_2" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (0, -3.1415918, 0)
+            }
+            references = @../Assets/StreetLamp.usda@
+        )
+        {
+            float2 ui:nodegraph:node:pos = (40, 40)
+            int ui:nodegraph:node:stackingOrder = 2
+            quatf xformOp:orient = (4.3596202e-8, 0, 1, 0)
+            float3 xformOp:scale = (0.9999998, 0.9999999, 0.9999998)
+            float3 xformOp:translate = (-6.194697, 0.18828861, 22.556425)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def "StreetLamp_3" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (0, 0, 0)
+            }
+            references = @../Assets/StreetLamp.usda@
+        )
+        {
+            float2 ui:nodegraph:node:pos = (20, 20)
+            int ui:nodegraph:node:stackingOrder = 1
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (0.9999998, 0.9999999, 0.9999998)
+            float3 xformOp:translate = (5.6591725, 0.18828474, 2.8664951)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def "StreetLamp_5" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (0, 0, 0)
+            }
+            references = @../Assets/StreetLamp.usda@
+        )
+        {
+            float2 ui:nodegraph:node:pos = (60, 60)
+            int ui:nodegraph:node:stackingOrder = 3
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (0.9999998, 0.9999999, 0.9999998)
+            float3 xformOp:translate = (5.659058, 0.18829001, 16.871992)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+    }
+
+    def Xform "DirectionalLight" (
+        customData = {
+            float3 rotationEulerHint = (-1.002917, 2.0877818e-7, -9.5992554e-8)
+        }
+    )
+    {
+        quatf xformOp:orient = (0.8768824, -0.48070496, 1.14608994e-7, 8.093262e-9)
+        float3 xformOp:translate = (-0.000013351441, 8.266261, 13.068711)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitComponent "DirectionalLight"
+        {
+            float3 color = (0, 0.0018956123, 0.031951725)
+            token info:id = "RealityKit.DirectionalLight"
+            float intensity = 99999
+
+            def RealityKitStruct "Shadow"
+            {
+                bool isEnabled = 1
+                float maximumDistance = 5
+            }
+        }
+    }
+
+    def RealityKitTimeline "Timeline"
+    {
+        def RealityKitTrack "Track"
+        {
+        }
     }
 }
 

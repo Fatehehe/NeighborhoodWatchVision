@@ -240,7 +240,7 @@ def Xform "Root" (
     }
 
     def Scope "StreetLamps" (
-        active = true
+        active = false
     )
     {
         reorder nameChildren = ["StreetLamp", "StreetLamp_1", "StreetLamp_2", "StreetLamp_3", "StreetLamp_4"]

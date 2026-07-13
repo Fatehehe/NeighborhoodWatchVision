@@ -18,7 +18,6 @@ struct ContentView: View {
             case .story:
                 StoryView()
             case .playing:
-                // Tampilan ini mungkin tidak terlihat jika window di-dismiss saat masuk immersive
                 Text("Memasuki pos penjagaan...")
                     .font(.largeTitle)
                     .glassBackgroundEffect()
@@ -29,8 +28,7 @@ struct ContentView: View {
         .onAppear {
             model.loadGameData()
         }
-        // Animasi transisi agar perpindahan antar layar terasa halus
-//        .animation(.default, value: model.currentFlow)
+        .animation(.default, value: model.currentFlow)
     }
 }
 
@@ -39,17 +37,15 @@ struct StartView: View {
     @Environment(AppModel.self) var model
     
     var body: some View {
-        // Konten Utama: Papan Kayu Judul
         Image("game_title")
             .resizable()
             .scaledToFit()
-//            .frame(width: 600, height: 400) // Sesuaikan ukuran
-            // Menambahkan ornament di bawah scene
+//            .frame(width: 600, height: 400)
+        
             .ornament(attachmentAnchor: .scene(.bottom), contentAlignment: .top) {
                 FrameButton(title: "Start the Game") {
                     model.currentFlow = .story
                 }
-                // Memberikan jarak (gap) antara batas bawah gambar dan tombol
                 .padding(.top, 20)
             }
     }
@@ -60,7 +56,6 @@ struct StoryView: View {
     @Environment(\.openImmersiveSpace) var openImmersiveSpace
     @Environment(\.dismissWindow) var dismissWindow
     
-    // Simpan teks cerita di konstanta menggunakan multi-line string
     let storyText = """
     Mas Yanto, ini si Marbella kurang ajar. Masa iya anomali dibiarin masuk ke kampung kita? Peja sampe harus nge-hack itu hape buat diatur frekuensinya, jadi kita bisa tangkap si anomali itu.
     
@@ -74,25 +69,20 @@ struct StoryView: View {
     
     var body: some View {
         ZStack {
-            // Gambar Kertas Background
             Image("paper_container")
                 .resizable()
                 .scaledToFill()
-            
-            // Teks Cerita
             VStack {
                 Text(storyText)
-                    // Jika kamu punya custom font bergaya tulisan tangan, gunakan .custom()
                     // .font(.custom("HandwritingFont", size: 22))
                     .font(.system(size: 22, weight: .regular, design: .serif))
-                    .foregroundColor(Color(red: 0.3, green: 0.15, blue: 0.05)) // Warna tinta cokelat gelap
-                    .lineSpacing(6) // Memberikan jarak antar baris agar nyaman dibaca
+                    .foregroundColor(Color(red: 0.3, green: 0.15, blue: 0.05))
+                    .lineSpacing(6)
                     .multilineTextAlignment(.leading)
             }
-            .padding(80) // Padding diatur agar teks pas di tengah kertas
+            .padding(80)
         }
         .frame(width: 800, height: 600)
-        // Tombol ornament di bawah kertas
         .ornament(attachmentAnchor: .scene(.bottom), contentAlignment: .top) {
             FrameButton(title: "Tutup") {
                 Task {
@@ -108,7 +98,7 @@ struct StoryView: View {
 
 struct ResultView: View {
     @Environment(AppModel.self) var model
-    @Environment(\.openImmersiveSpace) var openImmersiveSpace
+    @Environment(\.dismissImmersiveSpace) private var dismissImmersiveSpace
     @Environment(\.dismissWindow) var dismissWindow
     let isWin: Bool
     
@@ -124,15 +114,14 @@ struct ResultView: View {
             HStack(spacing: 30) {
                 FrameButton(title: "Retry") {
                     Task {
-                        // Langsung masuk ke gameplay lagi
                         model.currentFlow = .playing
-                        await openImmersiveSpace(id: model.immersiveSpaceID)
                         dismissWindow()
                     }
                 }
                 
                 FrameButton(title: "Main Menu") {
                     model.currentFlow = .start
+                    Task { await dismissImmersiveSpace() }
                 }
             }
         }
@@ -140,8 +129,6 @@ struct ResultView: View {
         .glassBackgroundEffect()
     }
 }
-
-// MARK: - Reusable Button Component
 
 struct FrameButton: View {
     let title: String
@@ -158,9 +145,8 @@ struct FrameButton: View {
                 .background(
                     Image("button_frame")
                         .resizable()
-                        // Jika gambar frame punya border spesifik, gunakan resizable(capInsets:)
                 )
         }
-        .buttonStyle(.plain) // Matikan style bawaan visionOS agar aset gambar tidak tertutup efek hover standar
+        .buttonStyle(.plain)
     }
 }

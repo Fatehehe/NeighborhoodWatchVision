@@ -12,7 +12,7 @@ struct NeighborhoodWatchVisionApp: App {
     @State private var appModel = AppModel()
 
     var body: some Scene {
-        WindowGroup {
+        WindowGroup(id: appModel.windowID) {
             ContentView()
                 .environment(appModel)
         }

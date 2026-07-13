@@ -31,6 +31,34 @@ class GameViewModel {
         }
     }
     
+    // Di dalam GameViewModel.swift
+        func restartGame() {
+            print("Merestart Game...")
+            
+            // 1. Bersihkan sisa NPC yang mungkin masih ada
+            encounterRoot.children.removeAll()
+            
+            // 2. Tutup gerbang (jika tadi game over saat gerbang masih terbuka)
+            if let world = worldRoot,
+               let leftGate = world.findEntity(named: "Left_Gate"),
+               var leftGateComp = leftGate.components[GateComponent.self],
+               let rightGate = world.findEntity(named: "Right_Gate"),
+               var rightGateComp = rightGate.components[GateComponent.self] {
+                
+                leftGateComp.state = .closed
+                rightGateComp.state = .closed
+                
+                leftGate.transform.rotation = leftGateComp.closedRotation
+                rightGate.transform.rotation = rightGateComp.closedRotation
+                
+                leftGate.components.set(leftGateComp)
+                rightGate.components.set(rightGateComp)
+            }
+            
+            // 3. Mulai ulang
+            startGame(with: self.encounters)
+        }
+    
     // MARK: - Input Pemain
     func handleButtonPress(entityName: String) {
         print("Button pressed: \(entityName)")
@@ -41,13 +69,14 @@ class GameViewModel {
                 print("Ada yg lagi di-interogasi nih")
                 let isAnomaly = encounterComp.data.llmPromptContext.roleType == .anomaly
                 
-                if entityName == "export3dcoat_001" {
+                if entityName == "GateButton" || entityName == "export3dcoat_001" {
                     print("GateButton diklik nih")
                     
                     encounterComp.state = .entered
                     npc.components.set(encounterComp)
                     
                     notifyTimeline("Pass")
+                    animateGates()
                     
                     if isAnomaly {
                         print("GAME OVER! Anomali berhasil masuk.")
@@ -56,7 +85,8 @@ class GameViewModel {
                     }
                     print("Warga valid. Gerbang dibuka.")
                     
-                } else if entityName == "export3dcoat" {
+                }
+                else if entityName == "AlarmButton" || entityName == "export3dcoat" {
                     print("AlarmButton diklik nih")
 
                     if !isAnomaly {
@@ -70,6 +100,7 @@ class GameViewModel {
                     encounterComp.state = .dismissed
                     npc.components.set(encounterComp)
                 }
+                
                 Task {
                     try? await Task.sleep(nanoseconds: 2_000_000_000)
                     npc.removeFromParent()

@@ -10,7 +10,7 @@ import RealityKit
 import RealityKitContent
 import Combine
 
-enum GameState {
+enum GameState: Equatable {
     case playing
     case won
     case lost(reason: String)
@@ -18,6 +18,7 @@ enum GameState {
 
 struct ImmersiveView: View {
     @Environment(AppModel.self) private var appModel
+    @Environment(\.openWindow) private var openWindow
     
     @State private var viewModel = GameViewModel()
 
@@ -61,6 +62,27 @@ struct ImmersiveView: View {
                     viewModel.handleButtonPress(entityName: value.entity.name)
                 }
         )
+        .onChange(of: viewModel.gameState) { oldValue, newValue in
+            switch newValue {
+            case .won:
+                print("Game Dimenangkan!")
+                appModel.currentFlow = .result(isWin: true)
+                openWindow(id: appModel.windowID)
+                
+            case .lost(let reason):
+                print("Game Over: \(reason)")
+                appModel.currentFlow = .result(isWin: false)
+                openWindow(id: appModel.windowID)
+                
+            case .playing:
+                break
+            }
+        }
+        .onChange(of: appModel.currentFlow) { oldValue, newValue in
+            if newValue == .playing && (viewModel.gameState != .playing) {
+                viewModel.restartGame()
+            }
+        }
         .onReceive(NotificationCenter.default.publisher(for: Notification.Name("RealityKit.NotificationTrigger"))) { notification in
             guard
                 let userInfo = notification.userInfo,

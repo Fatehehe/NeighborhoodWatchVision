@@ -10,7 +10,8 @@ import SwiftUI
 @MainActor
 @Observable
 class AppModel {
-    let immersiveSpaceID = "SecurityPostSpace" // Pastikan ID ini sesuai dengan di App.swift
+    let immersiveSpaceID = "SecurityPostSpace"
+    let windowID = "MainWindow"
     
     enum ImmersiveSpaceState {
         case closed
@@ -18,8 +19,7 @@ class AppModel {
         case open
     }
     
-    // State flow game dari awal sampai akhir
-    enum GameFlowState {
+    enum GameFlowState: Equatable {
         case start
         case story
         case playing
@@ -27,7 +27,7 @@ class AppModel {
     }
     
     var immersiveSpaceState = ImmersiveSpaceState.closed
-    var currentFlow: GameFlowState = .start // Default ke start screen
+    var currentFlow: GameFlowState = .start
     
     var gameData: GameData? = nil
         

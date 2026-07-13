@@ -124,6 +124,46 @@ def Xform "Root"
                 token type = "serial"
             }
         }
+
+        over "alfa_char_grp"
+        {
+            over "rig_003"
+            {
+                over "Body_Alfa"
+                {
+                    over "Cylinder_001" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </Root/Alfa_Idle/_materials/Alfa_TX> (
+                            bindMaterialAs = "weakerThanDescendants"
+                        )
+                    }
+                }
+            }
+        }
+
+        over "_materials"
+        {
+            over "Alfa_TX"
+            {
+                over "Image2D"
+                {
+                    string inputs:border_color
+                    asset inputs:file.connect = </Root/Alfa_Idle/_materials/Alfa_TX/ConstantImageFile.outputs:out>
+                    string inputs:mag_filter
+                }
+
+                def Shader "ConstantImageFile"
+                {
+                    uniform token info:id = "ND_constant_filename"
+                    asset inputs:value = @../Texture/Characters/3D Fatih_Fatih_Fake_TX_BaseColor.1001.png@
+                    asset outputs:out
+                    float2 ui:nodegraph:node:pos = (-417.75626, 112.93097)
+                    int ui:nodegraph:node:stackingOrder = 22
+                }
+            }
+        }
     }
 
     def RealityKitTimeline "WalkIn"

@@ -124,6 +124,14 @@ def Xform "Root"
                 token type = "serial"
             }
         }
+
+        over "_materials"
+        {
+            over "Alfa_TX"
+            {
+                asset inputs:BakedTexture = @../Texture/Characters/3D Alfa_Alfa_Fake_TX_BaseColor.1001.png@
+            }
+        }
     }
 
     def RealityKitTimeline "WalkIn"

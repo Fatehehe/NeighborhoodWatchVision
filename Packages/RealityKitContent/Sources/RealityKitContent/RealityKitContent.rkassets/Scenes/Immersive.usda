@@ -298,7 +298,7 @@ def Xform "Root"
                     uniform token info:id = "ND_smoothstep_float"
                     float inputs:high = 0.9
                     float inputs:in.connect = </Root/SkyDome/Looks/DomeMATSG/Noise3D.outputs:out>
-                    float inputs:low = 0.82
+                    float inputs:low = 0.54
                     float outputs:out
                     float2 ui:nodegraph:node:pos = (-416.19635, 1035.595)
                     int ui:nodegraph:node:stackingOrder = 1525
@@ -321,7 +321,7 @@ def Xform "Root"
                     float3 inputs:value = (1, 1, 1)
                     float3 outputs:out
                     float2 ui:nodegraph:node:pos = (-1008.1411, 1026.8967)
-                    int ui:nodegraph:node:stackingOrder = 1525
+                    int ui:nodegraph:node:stackingOrder = 1530
                 }
 
                 def Scope "Group3" (
@@ -465,7 +465,7 @@ def Xform "Root"
     )
     {
         float3 xformOp:scale = (1, 1, 1)
-        float3 xformOp:translate = (7.3381104, -1.7673874, -5.102042)
+        float3 xformOp:translate = (7.3381104, -1.7673874, -4.889007)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 

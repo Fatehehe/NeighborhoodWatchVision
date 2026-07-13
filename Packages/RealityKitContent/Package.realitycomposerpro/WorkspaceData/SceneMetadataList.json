@@ -154,6 +154,16 @@
       },
       [
         "3B86FAFA-86E9-4E44-84DB-4F9A1EF629C1",
+        "Root",
+        "SkyDome",
+        "Looks"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "3B86FAFA-86E9-4E44-84DB-4F9A1EF629C1",
         "Root"
       ],
       {
@@ -616,7 +626,67 @@
       [
         "D03B4EF4-C4BF-4C89-A17A-65EAA3D34554",
         "Root",
+        "Fence_Pole",
+        "Pole_fence"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "D03B4EF4-C4BF-4C89-A17A-65EAA3D34554",
+        "Root",
+        "WalkIn",
+        "Track"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "D03B4EF4-C4BF-4C89-A17A-65EAA3D34554",
+        "Root",
+        "WalkIn",
+        "Track3"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "D03B4EF4-C4BF-4C89-A17A-65EAA3D34554",
+        "Root",
+        "WalkIn",
+        "Track4"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "D03B4EF4-C4BF-4C89-A17A-65EAA3D34554",
+        "Root",
+        "WalkIn",
+        "Track5"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "D03B4EF4-C4BF-4C89-A17A-65EAA3D34554",
+        "Root",
         "Fence_Pole"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "D03B4EF4-C4BF-4C89-A17A-65EAA3D34554",
+        "Root",
+        "WalkIn",
+        "Track2"
       ],
       {
         "isExpanded" : true,
@@ -633,8 +703,7 @@
       [
         "D03B4EF4-C4BF-4C89-A17A-65EAA3D34554",
         "Root",
-        "Fence_Pole",
-        "Pole_fence"
+        "WalkIn"
       ],
       {
         "isExpanded" : true,

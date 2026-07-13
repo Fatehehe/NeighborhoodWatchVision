@@ -10,9 +10,10 @@
 
 def Xform "Root"
 {
+    reorder nameChildren = ["Streetlamp", "Mat_StreetLamp", "SpotLight"]
     def "Streetlamp" (
         active = true
-        prepend references = @../Mesh/Streetlamp.usdc@
+        references = @../Mesh/Streetlamp.usdc@
     )
     {
         quatf xformOp:orient = (4.3297803e-17, 4.3297803e-17, 0.70710677, 0.70710677)
@@ -26,7 +27,7 @@ def Xform "Root"
                 prepend apiSchemas = ["MaterialBindingAPI"]
             )
             {
-                rel material:binding = </Root/Material> (
+                rel material:binding = </Root/Mat_StreetLamp> (
                     bindMaterialAs = "weakerThanDescendants"
                 )
 
@@ -42,14 +43,14 @@ def Xform "Root"
         }
     }
 
-    def Material "Material" (
+    def Material "Mat_StreetLamp" (
         references = @../Materials/PBR_Material.usda@</Root/UnlitMaterial>
     )
     {
         asset inputs:BakedTexture = @../Texture/PosSatpam/Lamp.png@
         token outputs:mtlx:surface
         token outputs:realitykit:vertex
-        prepend token outputs:surface.connect = </Root/Material/UsdPreviewSurface.outputs:surface>
+        token outputs:surface.connect = </Root/Mat_StreetLamp/UsdPreviewSurface.outputs:surface>
 
         def Shader "UsdPreviewSurface"
         {
@@ -61,30 +62,6 @@ def Xform "Root"
         {
             float2 ui:nodegraph:node:pos = (138.018, 269.48032)
             int ui:nodegraph:node:stackingOrder = 14
-        }
-    }
-
-    def Cube "Cube" (
-        active = false
-        prepend apiSchemas = ["MaterialBindingAPI"]
-    )
-    {
-        rel material:binding = </Root/Cube/DefaultMaterial>
-        double size = 10
-        float3 xformOp:translate = (-0.8506236, -5.777446, 0)
-        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
-
-        def Material "DefaultMaterial"
-        {
-            prepend token outputs:surface.connect = </Root/Cube/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
-
-            def Shader "DefaultSurfaceShader"
-            {
-                uniform token info:id = "UsdPreviewSurface"
-                color3f inputs:diffuseColor = (1, 1, 1)
-                float inputs:roughness = 0.75
-                token outputs:surface
-            }
         }
     }
 

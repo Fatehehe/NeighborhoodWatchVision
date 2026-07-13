@@ -1,5 +1,5 @@
 {
-  "advancedEditorSelectedIdentifier" : "ProjectBrowser",
+  "advancedEditorSelectedIdentifier" : "ShaderGraphEditorPluginID",
   "openSceneRelativePaths" : [
     "Assets\/Fence.usda",
     "Assets\/FenchPole.usda",
@@ -9,7 +9,9 @@
     "Scenes\/EnviScene.usda",
     "Assets\/PosSatpam.usda",
     "Assets\/Fatih.usda",
-    "Scenes\/EnviScene 1.usda"
+    "Animations\/Fatih_Walk.usdc",
+    "Animations\/Fatih_Idle.usdc",
+    "Materials\/PBR_Material.usda"
   ],
   "recentIdentifiers" : {
     "0CB919D4-471B-4DD5-BDEC-B08B1AD93AF8" : [
@@ -22,6 +24,9 @@
 
     ],
     "262E7451-5588-4B8A-B057-A20B16538E66" : [
+
+    ],
+    "38C27507-43E1-48C5-B096-298D751FC8FB" : [
 
     ],
     "3B86FAFA-86E9-4E44-84DB-4F9A1EF629C1" : [
@@ -48,7 +53,13 @@
     "9EE76536-4C15-4203-8152-94BD0E91B5FD" : [
 
     ],
+    "9F1E47D5-92C3-4E1F-9D09-483466625824" : [
+
+    ],
     "A2516ECF-E888-45C4-8776-0FFE7F4B3C04" : [
+
+    ],
+    "A526EAFA-A269-4FAA-923B-5C3AE04C0963" : [
 
     ],
     "AA9D8856-4626-4D6C-933E-820129D1BD32" : [
@@ -60,10 +71,16 @@
     "B965C361-4FE1-40A2-9077-DE1D9DD05473" : [
 
     ],
+    "CF046821-F8E7-45A4-B14B-7EC79C9F88B5" : [
+
+    ],
     "D03B4EF4-C4BF-4C89-A17A-65EAA3D34554" : [
 
     ],
     "DBB2D800-D8AA-457E-8BB1-18A4020A9954" : [
+
+    ],
+    "E6A68ACD-D47C-46E3-86A8-6C950CF22CEF" : [
 
     ],
     "EA45A956-E81B-4CC6-B9A0-EF59EC338DF4" : [
@@ -707,6 +724,30 @@
         ]
       }
     ],
+    "38C27507-43E1-48C5-B096-298D751FC8FB" : [
+      {
+        "date" : 805619724.166292,
+        "title" : "Untitled",
+        "transform" : [
+          1,
+          0,
+          -0,
+          0,
+          -0,
+          0.7071069,
+          -0.7071067,
+          0,
+          0,
+          0.7071067,
+          0.7071069,
+          0,
+          -6.477598,
+          6.385695,
+          4.8359537,
+          1
+        ]
+      }
+    ],
     "3B86FAFA-86E9-4E44-84DB-4F9A1EF629C1" : [
       {
         "date" : 805603075.606056,
@@ -1065,6 +1106,28 @@
     ],
     "3D9811AB-4C6B-4602-87A0-81868911537E" : [
       {
+        "date" : 805619910.305493,
+        "title" : "Untitled",
+        "transform" : [
+          0.97475,
+          3.6919115e-08,
+          0.22329889,
+          0,
+          0.1880636,
+          0.53915524,
+          -0.82094073,
+          0,
+          -0.12039272,
+          0.84220636,
+          0.5255416,
+          0,
+          7.309561,
+          14.499601,
+          3.472754,
+          1
+        ]
+      },
+      {
         "date" : 805612770.585323,
         "title" : "Untitled",
         "transform" : [
@@ -1259,28 +1322,6 @@
           -0.6079788,
           4.056905,
           -1.1647882,
-          1
-        ]
-      },
-      {
-        "date" : 805612630.923424,
-        "title" : "Untitled",
-        "transform" : [
-          0.8981971,
-          3.699243e-08,
-          0.43959293,
-          0,
-          0.34556916,
-          0.618084,
-          -0.70608366,
-          0,
-          -0.2717053,
-          0.78611207,
-          0.5551613,
-          0,
-          -1.1869401,
-          11.39713,
-          3.3235257,
           1
         ]
       }
@@ -3675,5 +3716,5 @@
   "sceneViewportBackgroundColors" : {
 
   },
-  "selectedSceneRelativePath" : "Scenes\/EnviScene 1.usda"
+  "selectedSceneRelativePath" : "Materials\/PBR_Material.usda"
 }

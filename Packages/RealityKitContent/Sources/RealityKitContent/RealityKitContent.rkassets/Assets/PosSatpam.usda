@@ -10,7 +10,7 @@
 
 def Xform "Root"
 {
-    reorder nameChildren = ["Pos_Satpam", "Bench", "Table", "Lamp", "GreenButton", "RedButton", "PosSatpam"]
+    reorder nameChildren = ["Pos_Satpam", "Mat_Bench", "Mat_Table", "Mat_Lamp", "Mat_GreenButton", "Mat_RedButton", "Mat_PosSatpam"]
     def "Pos_Satpam" (
         active = true
         references = @../Mesh/Pos_Satpam.usdc@
@@ -27,7 +27,7 @@ def Xform "Root"
                 prepend apiSchemas = ["MaterialBindingAPI"]
             )
             {
-                rel material:binding = </Root/Bench> (
+                rel material:binding = </Root/Mat_Bench> (
                     bindMaterialAs = "weakerThanDescendants"
                 )
             }
@@ -39,7 +39,7 @@ def Xform "Root"
                 prepend apiSchemas = ["MaterialBindingAPI"]
             )
             {
-                rel material:binding = </Root/Table> (
+                rel material:binding = </Root/Mat_Table> (
                     bindMaterialAs = "weakerThanDescendants"
                 )
             }
@@ -51,7 +51,7 @@ def Xform "Root"
                 prepend apiSchemas = ["MaterialBindingAPI"]
             )
             {
-                rel material:binding = </Root/Lamp> (
+                rel material:binding = </Root/Mat_Lamp> (
                     bindMaterialAs = "weakerThanDescendants"
                 )
                 float3 xformOp:translate = (0, 0, 0)
@@ -65,7 +65,7 @@ def Xform "Root"
                 prepend apiSchemas = ["MaterialBindingAPI"]
             )
             {
-                rel material:binding = </Root/PosSatpam> (
+                rel material:binding = </Root/Mat_PosSatpam> (
                     bindMaterialAs = "weakerThanDescendants"
                 )
             }
@@ -77,7 +77,7 @@ def Xform "Root"
                 prepend apiSchemas = ["MaterialBindingAPI"]
             )
             {
-                rel material:binding = </Root/PosSatpam> (
+                rel material:binding = </Root/Mat_PosSatpam> (
                     bindMaterialAs = "weakerThanDescendants"
                 )
             }
@@ -89,7 +89,7 @@ def Xform "Root"
                 prepend apiSchemas = ["MaterialBindingAPI"]
             )
             {
-                rel material:binding = </Root/GreenButton> (
+                rel material:binding = </Root/Mat_GreenButton> (
                     bindMaterialAs = "weakerThanDescendants"
                 )
             }
@@ -101,7 +101,7 @@ def Xform "Root"
                 prepend apiSchemas = ["MaterialBindingAPI"]
             )
             {
-                rel material:binding = </Root/RedButton> (
+                rel material:binding = </Root/Mat_RedButton> (
                     bindMaterialAs = "weakerThanDescendants"
                 )
             }
@@ -113,14 +113,14 @@ def Xform "Root"
                 prepend apiSchemas = ["MaterialBindingAPI"]
             )
             {
-                rel material:binding = </Root/PosSatpam> (
+                rel material:binding = </Root/Mat_PosSatpam> (
                     bindMaterialAs = "weakerThanDescendants"
                 )
             }
         }
     }
 
-    def Material "Bench" (
+    def Material "Mat_Bench" (
         references = @../Materials/PBR_Material.usda@</Root/UnlitMaterial>
     )
     {
@@ -134,7 +134,7 @@ def Xform "Root"
         )
         token outputs:mtlx:surface
         token outputs:realitykit:vertex
-        token outputs:surface.connect = </Root/Bench/UsdPreviewSurface.outputs:surface>
+        token outputs:surface.connect = </Root/Mat_Bench/UsdPreviewSurface.outputs:surface>
         float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (178.65804, 120.496086)
         int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 20
 
@@ -159,14 +159,14 @@ def Xform "Root"
         }
     }
 
-    def Material "Table" (
+    def Material "Mat_Table" (
         references = @../Materials/PBR_Material.usda@</Root/UnlitMaterial>
     )
     {
         asset inputs:BakedTexture = @../Texture/PosSatpam/Pos_Satpam_Table_TX_BaseColor.1001.png@
         token outputs:mtlx:surface
         token outputs:realitykit:vertex
-        token outputs:surface.connect = </Root/Table/UsdPreviewSurface.outputs:surface>
+        token outputs:surface.connect = </Root/Mat_Table/UsdPreviewSurface.outputs:surface>
         float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (387.85156, 17.480469)
         int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 14
 
@@ -177,13 +177,13 @@ def Xform "Root"
         }
     }
 
-    def Material "Lamp" (
+    def Material "Mat_Lamp" (
         references = @../Materials/PBR_Material.usda@</Root/UnlitMaterial>
     )
     {
         token outputs:mtlx:surface
         token outputs:realitykit:vertex
-        token outputs:surface.connect = </Root/Lamp/UsdPreviewSurface.outputs:surface>
+        token outputs:surface.connect = </Root/Mat_Lamp/UsdPreviewSurface.outputs:surface>
 
         def Shader "UsdPreviewSurface"
         {
@@ -192,14 +192,14 @@ def Xform "Root"
         }
     }
 
-    def Material "GreenButton" (
+    def Material "Mat_GreenButton" (
         references = @../Materials/PBR_Material.usda@</Root/UnlitMaterial>
     )
     {
         asset inputs:BakedTexture = @../Texture/PosSatpam/Pos_Satpam_Button_Green_TX_BaseColor.1001.png@
         token outputs:mtlx:surface
         token outputs:realitykit:vertex
-        token outputs:surface.connect = </Root/GreenButton/UsdPreviewSurface.outputs:surface>
+        token outputs:surface.connect = </Root/Mat_GreenButton/UsdPreviewSurface.outputs:surface>
 
         def Shader "UsdPreviewSurface"
         {
@@ -208,14 +208,14 @@ def Xform "Root"
         }
     }
 
-    def Material "RedButton" (
+    def Material "Mat_RedButton" (
         references = @../Materials/PBR_Material.usda@</Root/UnlitMaterial>
     )
     {
         asset inputs:BakedTexture = @../Texture/PosSatpam/Pos_Satpam_Button_Red_TX_BaseColor.1001.png@
-        token outputs:mtlx:surface.connect = </Root/RedButton/UnlitSurface.outputs:out>
+        token outputs:mtlx:surface.connect = </Root/Mat_RedButton/UnlitSurface.outputs:out>
         token outputs:realitykit:vertex
-        token outputs:surface.connect = </Root/RedButton/UsdPreviewSurface.outputs:surface>
+        token outputs:surface.connect = </Root/Mat_RedButton/UsdPreviewSurface.outputs:surface>
         float2 ui:nodegraph:node:pos = (4, 4)
         int ui:nodegraph:node:stackingOrder = 1
 
@@ -226,14 +226,14 @@ def Xform "Root"
         }
     }
 
-    def Material "PosSatpam" (
+    def Material "Mat_PosSatpam" (
         references = @../Materials/PBR_Material.usda@</Root/UnlitMaterial>
     )
     {
         asset inputs:BakedTexture = @../Texture/PosSatpam/Pos_Satpam_Kamling_TX_BaseColor.1001.png@
-        token outputs:mtlx:surface.connect = </Root/PosSatpam/UnlitSurface.outputs:out>
+        token outputs:mtlx:surface.connect = </Root/Mat_PosSatpam/UnlitSurface.outputs:out>
         token outputs:realitykit:vertex
-        token outputs:surface.connect = </Root/PosSatpam/UsdPreviewSurface.outputs:surface>
+        token outputs:surface.connect = </Root/Mat_PosSatpam/UsdPreviewSurface.outputs:surface>
         float2 ui:nodegraph:node:pos = (24, 24)
         int ui:nodegraph:node:stackingOrder = 2
 

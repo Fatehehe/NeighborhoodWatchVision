@@ -355,8 +355,8 @@ def Xform "Root"
         )
         token outputs:mtlx:surface.connect = </Root/UnlitMaterial/UnlitSurface.outputs:out>
         token outputs:realitykit:vertex
-        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (387.12338, 143.3075)
-        int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 8
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (387.29984, -31.750925)
+        int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 23
 
         def Shader "UnlitSurface"
         {
@@ -365,8 +365,8 @@ def Xform "Root"
             bool inputs:hasPremultipliedAlpha
             float inputs:opacity
             token outputs:out
-            float2 ui:nodegraph:node:pos = (138.27582, 211.63657)
-            int ui:nodegraph:node:stackingOrder = 12
+            float2 ui:nodegraph:node:pos = (119.662025, 14.985929)
+            int ui:nodegraph:node:stackingOrder = 14
             string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["inputs:opacity", "inputs:opacityThreshold"]
         }
 
@@ -379,7 +379,7 @@ def Xform "Root"
             string inputs:v_wrap_mode
             color3f outputs:out
             float2 ui:nodegraph:node:pos = (-116.98362, 71.82049)
-            int ui:nodegraph:node:stackingOrder = 2
+            int ui:nodegraph:node:stackingOrder = 20
         }
     }
 

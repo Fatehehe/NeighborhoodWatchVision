@@ -465,7 +465,7 @@ def Xform "Root"
     )
     {
         float3 xformOp:scale = (1, 1, 1)
-        float3 xformOp:translate = (7.3381104, -1.7673874, -4.889007)
+        float3 xformOp:translate = (-4.9148226, -1.7673429, -6.782028)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 

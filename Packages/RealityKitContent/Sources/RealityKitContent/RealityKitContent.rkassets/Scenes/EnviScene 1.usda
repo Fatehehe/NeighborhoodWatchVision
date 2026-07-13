@@ -1,0 +1,279 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 2.0 (494.100.6)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root" (
+    customData = {
+        float3 rotationEulerHint = (0, 1.5707963, 0)
+    }
+)
+{
+    reorder nameChildren = ["Gate", "Houses", "Fences", "Cube", "PosSatpam", "StreetLamp", "StreetLamp_1", "StreetLamp_2", "StreetLamp_3", "StreetLamp_4", "StreetLamps"]
+    quatf xformOp:orient = (0.7117866, 0, 0.7023957, 0)
+    float3 xformOp:translate = (-4.971842, -0.18828337, -7.2341256)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+    def "Gate" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (0, 0, 0)
+        }
+        references = @../Assets/Gate.usda@
+    )
+    {
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (3.5, 3.5, 3.5)
+        float3 xformOp:translate = (-0.91604996, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Gate"
+        {
+            over "Left_Gate" (
+                customData = {
+                    float3 rotationEulerHint = (0, 0, 0)
+                }
+            )
+            {
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1.206763505935669, 0, 1.504814624786377)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+        }
+    }
+
+    def Scope "Houses" (
+        active = true
+    )
+    {
+        reorder nameChildren = ["House7", "House3", "House6", "House4", "House1"]
+        def "House7" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (0, 1.5707963, 0)
+            }
+            references = @../Assets/House7.usda@
+        )
+        {
+            quatf xformOp:orient = (0.7086356, 0, 0.7055746, 0)
+            float3 xformOp:scale = (0.8, 0.79999995, 0.8)
+            float3 xformOp:translate = (12.677499, 0, 3.2441773)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def "House3" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (0, -1.5707963, 0)
+            }
+            references = @../Assets/House3.usda@
+        )
+        {
+            quatf xformOp:orient = (0.7071067, 0, -0.70710677, 0)
+            float3 xformOp:scale = (0.7999999, 0.7999999, 0.7999999)
+            float3 xformOp:translate = (21.650387, 6.854534e-7, 7.9254274)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def "House6" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (0, 1.5707963, 0)
+            }
+            references = @../Assets/House6.usda@
+        )
+        {
+            reorder nameChildren = ["House6", "Material"]
+            quatf xformOp:orient = (0.7071067, 0, 0.70710677, 0)
+            float3 xformOp:scale = (0.7999999, 0.7999999, 0.7999999)
+            float3 xformOp:translate = (12.900479, 5.9604645e-8, 13.030213)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def "House4" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (0, -1.5707963, 0)
+            }
+            references = @../Assets/House4.usda@
+        )
+        {
+            quatf xformOp:orient = (0.7141805, 0, -0.69996136, 0)
+            float3 xformOp:scale = (0.8, 0.8, 0.8)
+            float3 xformOp:translate = (23.361538, 9.834766e-7, 18.585201)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def "House1" (
+            active = true
+            references = @../Assets/House1.usda@
+        )
+        {
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (0.8, 0.8, 0.8)
+            float3 xformOp:translate = (12.41726, 0, 21.067863)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+    }
+
+    def Scope "Fences" (
+        active = true
+    )
+    {
+        reorder nameChildren = ["FenceShort", "FenceShort_1", "FenchPole", "Fence", "Fence_1"]
+        def "FenceShort" (
+            active = true
+            references = @../Assets/FenceShort.usda@
+        )
+        {
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (-9.477705, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def "FenceShort_1" (
+            active = true
+            references = @../Assets/FenceShort.usda@
+        )
+        {
+            float2 ui:nodegraph:node:pos = (20, 20)
+            int ui:nodegraph:node:stackingOrder = 1
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (3.5261564, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def "FenchPole" (
+            active = true
+            references = @../Assets/FenchPole.usda@
+        )
+        {
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (7.7614613, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def "Fence" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (0, -1.5707963, 0)
+            }
+            references = @../Assets/Fence.usda@
+        )
+        {
+            quatf xformOp:orient = (0.70710677, 0, -0.7071067, 0)
+            float3 xformOp:scale = (0.99999994, 0.99999994, 0.99999994)
+            float3 xformOp:translate = (7.7392206, 0.0000025629997, 13.515922)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def "Fence_1" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (0, -1.5707963, 0)
+            }
+            references = @../Assets/Fence.usda@
+        )
+        {
+            float2 ui:nodegraph:node:pos = (20, 20)
+            int ui:nodegraph:node:stackingOrder = 1
+            quatf xformOp:orient = (0.70710677, 0, -0.7071067, 0)
+            float3 xformOp:scale = (0.99999994, 0.99999994, 0.99999994)
+            float3 xformOp:translate = (7.7393627, 0.0000037401915, 26.843721)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+    }
+
+    def Cube "Cube" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        customData = {
+            float3 rotationEulerHint = (0, 0, 0)
+        }
+    )
+    {
+        rel material:binding = </Root/Cube/DefaultMaterial>
+        double size = 0.2
+        quatf xformOp:orient = (0.99999994, 0, 0, 0)
+        float3 xformOp:scale = (1000, 0.1, 1000)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface
+            token outputs:realitykit:vertex
+            prepend token outputs:surface.connect = </Root/Cube/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+            def Shader "DefaultSurfaceShader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.14608246, 0.26652345, 0.11780816) (
+                    colorSpace = "srgb_displayp3"
+                )
+                float inputs:roughness = 1
+                token outputs:surface
+            }
+        }
+    }
+
+    def "PosSatpam" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (0, 1.5707963, 0)
+        }
+        references = @../Assets/PosSatpam.usda@
+    )
+    {
+        quatf xformOp:orient = (0.6976247, 0, 0.7164633, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (-6.6412535, 0.0000024437904, 4.721513)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "Fatih" (
+        active = true
+        prepend references = @../Assets/Fatih.usda@
+    )
+    {
+        quatf xformOp:orient = (0.7117866, 0, -0.7023958, 0)
+        float3 xformOp:scale = (0.9999999, 0.99999994, 0.9999999)
+        float3 xformOp:translate = (-7.1674595, 0.18828335, 5.0674753)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+}
+
+def Cube "Cube_1" (
+    active = true
+    prepend apiSchemas = ["MaterialBindingAPI"]
+)
+{
+    rel material:binding = </Cube_1/DefaultMaterial>
+    double size = 0.2
+    quatf xformOp:orient = (1, 0, 0, 0)
+    float3 xformOp:scale = (1, 1, 1)
+    float3 xformOp:translate = (0, 0, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+    def Material "DefaultMaterial"
+    {
+        token outputs:surface.connect = </Cube_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+        def Shader "DefaultSurfaceShader"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (1, 1, 1)
+            float inputs:roughness = 0.75
+            token outputs:surface
+        }
+    }
+}
+

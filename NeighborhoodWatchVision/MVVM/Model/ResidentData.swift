@@ -31,12 +31,13 @@ public struct EncounterData: Codable, Identifiable {
     public let spawnVisuals: [String]
     public let idCardData: IDCardData
     public let llmPromptContext: LLMPromptContext
-    public let idImageURL: String
 }
 
 public struct IDCardData: Codable {
     public let idAsset: String
     public let printedName: String
+    public let gender: String
+    public let birthDay: String
     public let printedAddress: String
     public let printedIDNumber: String
     public let expirationDate: String

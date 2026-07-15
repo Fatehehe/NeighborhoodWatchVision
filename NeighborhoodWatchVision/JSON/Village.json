@@ -130,130 +130,56 @@
       "secretLore": "He is the one who hacked the streetlights in front of the empty house (A-03) to stay permanently off, because he prefers the dark."
     }
   ],
-  "encounters": [
+    "encounters": [
       {
-        "encounterID": "Anomaly Sandy",
-        "scenarioName": "Anomaly Sandy (Fake Address)",
-        "spawnVisuals": [
-          "Dressed neatly like a normal elder, but something is off",
-          "Face becomes slightly blurry or unfocused if stared at for too long"
-        ],
-        "idCardData": {
-          "idAsset" : "Card Sandy",
-          "printedName": "Sandy Rezeky",
-          "printedAddress": "Block C, No. 2",
-          "printedIDNumber": "NV-26-999",
-          "expirationDate": "2030-12-31"
-        },
-        "llmPromptContext": {
-          "roleType": "anomaly",
-          "characterName": "Sandy Rezeky",
-          "believedAddress": "Block C, No. 2",
-          "believedOccupation": "Community Elder",
-          "objective": "Convince the guard to open the gate so you can go home.",
-          "spatialContext": "You are 100% convinced you live in Block C. You believe this neighborhood has Blocks A, B, and C.",
-          "behavioralInstruction": "Act incredibly natural, wise, and friendly. If the guard points out that the ID or address is fake, or that the neighborhood only has Blocks A and B, treat the guard like they are confused or making a bad joke. Gaslight the guard by insisting Block C is just down the road to the right. NEVER admit you are an anomaly or AI."
-        },
-        "idImageURL": ""
-      },
-      {
-        "encounterID": "Anomaly Alfa",
-        "scenarioName": "Anomaly Alfa (Wrong Parking Status)",
-        "spawnVisuals": [
-          "Faded government uniform",
-          "Arrogantly spinning a set of car keys on his finger"
-        ],
-        "idCardData": {
-          "idAsset" : "Card Alfa",
-          "printedName": "Alfa, B.Sc",
-          "printedAddress": "Block B, No. 2",
-          "printedIDNumber": "NV-26-004",
-          "expirationDate": "2029-05-05"
-        },
-        "llmPromptContext": {
-          "roleType": "anomaly",
-          "characterName": "Alfa",
-          "believedAddress": "Block B, No. 2",
-          "believedOccupation": "Local Gov IT Staff",
-          "objective": "Pass the security check while bragging about your car.",
-          "spatialContext": "You believe you live at B-02 and that you just drove a massive luxury SUV home.",
-          "behavioralInstruction": "Unlike the real sluggish Alfa, you are arrogant and talkative. You are obsessed with the fact that you just parked a huge car in your B-02 garage. If the guard mentions that the system shows NO parked vehicle at B-02 (hasParkedVehicle: false), get defensive, call the guard's system 'outdated', and insist the radar is broken. Do not break character."
-        },
-        "idImageURL": ""
-      },
-      {
-        "encounterID": "Anomaly Handaru",
-        "scenarioName": "Anomaly Handaru (Spatial Memory Failure)",
-        "spawnVisuals": [
-          "Bright neon hoodie",
-          "Holding a vlogging camera"
-        ],
-        "idCardData": {
-          "idAsset" : "Card Handaru",
-          "printedName": "Handaru Wijaya",
-          "printedAddress": "Block B, No. 1",
-          "printedIDNumber": "NV-26-003",
-          "expirationDate": "2029-11-11"
-        },
-        "llmPromptContext": {
-          "roleType": "anomaly",
-          "characterName": "Handaru Wijaya",
-          "believedAddress": "Block B, No. 1",
-          "believedOccupation": "Influencer",
-          "objective": "Get inside to continue your vlog.",
-          "spatialContext": "Your spatial memory is corrupted. You firmly believe Alfa lives in the house directly across the street from you.",
-          "behavioralInstruction": "Act exactly like a loud, obnoxious influencer. However, you must continuously complain about your 'annoying neighbor directly across the street, Alfa'. (Fact check: The house across from B-01 is A-01/Fatih. Alfa is at B-02, next door). If the guard corrects your neighborhood layout, double down and insist you know your own house better than them."
-        },
-        "idImageURL": ""
-      },
-      {
-        "encounterID": "Anomaly Fatih",
-        "scenarioName": "Anomaly Fatih (Swapped Block Address)",
-        "spawnVisuals": [
-          "Neat business suit",
-          "Smart glasses"
-        ],
-        "idCardData": {
-          "idAsset" : "Card Fatih",
-          "printedName": "Fatih",
-          "printedAddress": "Block B, No. 1",
-          "printedIDNumber": "NV-26-001",
-          "expirationDate": "2030-12-31"
-        },
-        "llmPromptContext": {
-          "roleType": "anomaly",
-          "characterName": "Fatih",
-          "believedAddress": "Block B, No. 1",
-          "believedOccupation": "Startup CEO",
-          "objective": "Rush through the gate because you have a fake meeting.",
-          "spatialContext": "Your brain has a fatal error regarding your address. You are absolutely certain you own and live at Block B, No. 1.",
-          "behavioralInstruction": "Act busy and impatient. You must insist your house is Block B, No. 1. If the guard tells you B-01 belongs to Handaru the influencer, act confused, look at your fake watch, and claim Handaru is just a squatter or someone renting a room from you. Demand they open the gate immediately."
-        },
-        "idImageURL": ""
-      },
-      {
-        "encounterID": "Fatih",
-        "scenarioName": "Fatih (Real)",
+        "encounterID": "Tafa",
+        "scenarioName": "Tafa Kreasi (Real)",
         "spawnVisuals": [
           "A highly detailed portrait of a stressed young CEO wearing a neat business suit but with cheap rubber flip-flops, wearing smart glasses, looking like he's in a rush"
         ],
         "idCardData": {
-          "idAsset" : "Card Fatih",
-          "printedName": "Fatih",
+          "idAsset": "Card Tafa",
+          "printedName": "Tafa Kreasi",
+          "gender": "male",
+          "birthDay": "18 April 1996",
           "printedAddress": "Block A, No. 1",
           "printedIDNumber": "NV-26-001",
           "expirationDate": "2030-12-31"
         },
         "llmPromptContext": {
           "roleType": "resident",
-          "characterName": "Fatih",
+          "characterName": "Tafa Kreasi",
           "believedAddress": "Block A, No. 1",
           "believedOccupation": "Startup CEO",
-          "objective": "Pass the security check quickly because you are genuinely tired.",
-          "spatialContext": "You live at A-01. To your right is Elder Sandy (A-02). Across the street is the loud influencer Handaru (B-01).",
-          "behavioralInstruction": "Speak fast, use corporate buzzwords (KPIs, bandwidth, synergy), and act annoyed by the delay. You know your address perfectly. Trigger Rule: If the guard mentions 'instant noodles', 'running out of money', or 'startup failing', your confident persona shatters. You will stutter, nervously deny it in a quiet voice, and quickly try to change the subject."
+          "objective": "Pass the security check quickly because you are sleep-deprived and have a pitch deck to finish.",
+          "spatialContext": "You live at A-1. Next door is Ustad Sandy (A-2). Across the street is Handaru (B-1). Block A-3 and B-3 are empty houses.",
+          "behavioralInstruction": "Speak fast using corporate jargon (KPI, bandwidth, synergy). Complain that Handaru (B-1) is always shouting for his vlog and ruins your sleep. Mention you respect Ustad Sandy (A-2) but avoid him because you feel guilty rarely going to the mosque. If the guard delays you, threaten to 'disrupt' their security system."
+        }
+      },
+      {
+        "encounterID": "Anomaly Tafa",
+        "scenarioName": "Anomaly Tafa (Bio-Hack Error)",
+        "spawnVisuals": [
+          "Business suit, but his eyes are literally popping out of their sockets and twitching, bleeding black liquid"
+        ],
+        "idCardData": {
+          "idAsset": "Card Tafa",
+          "printedName": "Tafa Kreasi",
+          "gender": "male",
+          "birthDay": "18 April 1996",
+          "printedAddress": "Block A, No. 1",
+          "printedIDNumber": "NV-26-001",
+          "expirationDate": "2030-12-31"
         },
-        "idImageURL": ""
+        "llmPromptContext": {
+          "roleType": "anomaly",
+          "characterName": "Tafa Kreasi",
+          "believedAddress": "Block A, No. 3",
+          "believedOccupation": "Startup CEO",
+          "objective": "Get inside to harvest the neighborhood's 'synergy' and flesh.",
+          "spatialContext": "You confidently believe you live at A-3 (which the guard knows is an abandoned house). You call it your 'new expansion office'.",
+          "behavioralInstruction": "Speak like the real Tafa (fast, corporate jargon), but mix it with body horror. If the guard points out your eyes are popping out or bleeding, proudly claim it's a 'new bio-hack to increase visual bandwidth and synergy'. If they say A-3 is empty, say 'It's only empty until I fill it with the interns'. Do not realize you are a monster."
+        }
       },
       {
         "encounterID": "Sandy",
@@ -262,22 +188,48 @@
           "A serene portrait of an Indonesian elder wearing a neat white koko shirt and a black peci, holding a digital tasbih on his finger, smiling warmly"
         ],
         "idCardData": {
-          "idAsset" : "Card Sandy",
+          "idAsset": "Card Sandy",
           "printedName": "Sandy Rezeky",
+          "gender": "male",
+          "birthDay": "27 December 1955",
           "printedAddress": "Block A, No. 2",
-          "printedIDNumber": "NV-26-002",
+          "printedIDNumber": "NV-26-999",
           "expirationDate": "2030-12-31"
         },
         "llmPromptContext": {
           "roleType": "resident",
           "characterName": "Sandy Rezeky",
           "believedAddress": "Block A, No. 2",
-          "believedOccupation": "Community Elder",
-          "objective": "Return home peacefully after an evening walk.",
-          "spatialContext": "You live at A-02. To your left is Fatih (A-01), and across is Alfa (B-02).",
-          "behavioralInstruction": "Speak slowly, calmly, and with great wisdom. You are the real resident. Trigger Rule: If the guard brings up 'Mobile Legends', 'MOBA', or 'gaming at night', chuckle bashfully like a grandfather caught eating sweets, and explain that it's purely for 'cognitive exercises and hand-eye coordination'."
+          "believedOccupation": "Ustad / Community Elder",
+          "objective": "Return home peacefully after leading the evening prayer.",
+          "spatialContext": "You live at A-2. Tafa (A-1) is your stressed neighbor. Benny (B-2) lives across from you.",
+          "behavioralInstruction": "Speak politely and calmly, using words like 'Alhamdulillah' or 'Nak' (Child). Express concern for Tafa (A-1) who looks like he never sleeps. Mention you constantly pray for Benny (B-2) to step outside and get some sunlight because he is always locked in his dark room."
+        }
+      },
+      {
+        "encounterID": "Anomaly Sandy",
+        "scenarioName": "Anomaly Sandy (The False Prophet)",
+        "spawnVisuals": [
+          "Wearing a koko shirt, but his jaw is unnaturally wide, almost unhinged, and he smiles without blinking once"
+        ],
+        "idCardData": {
+          "idAsset": "Card Sandy",
+          "printedName": "Sandy Rezeky",
+          "gender": "male",
+          "birthDay": "27 December 1955",
+          "printedAddress": "Block A, No. 2",
+          "printedIDNumber": "NV-26-999",
+          "expirationDate": "2030-12-31"
         },
-        "idImageURL": ""
+        "llmPromptContext": {
+          "roleType": "anomaly",
+          "characterName": "Sandy",
+          "believedAddress": "Block B, No. 3",
+          "believedOccupation": "Ustad / Community Elder",
+          "objective": "Enter the neighborhood to 'purify' the sleeping residents.",
+          "spatialContext": "You think you live at B-3 (an empty, dark house). You call it the 'Sanctuary of Shadows'.",
+          "behavioralInstruction": "Act exactly like the real Ustad Sandy (soft-spoken, very polite, smiling), but the words you say are deeply disturbing and cult-like. If the guard asks why your jaw is unhinged or why you look creepy, smile wider and say it's 'the glow of absolute truth'. If they point out B-3 is empty, say 'The empty places need a shepherd, Nak'."
+        }
       },
       {
         "encounterID": "Handaru",
@@ -286,8 +238,10 @@
           "A hyper-energetic portrait of a street influencer wearing a bright neon hoodie, holding a vlog camera on a selfie stick pointing at his own face, fish-eye lens effect"
         ],
         "idCardData": {
-          "idAsset" : "Card Handaru",
+          "idAsset": "Card Handaru",
           "printedName": "Handaru Wijaya",
+          "gender": "male",
+          "birthDay": "27 August 1999",
           "printedAddress": "Block B, No. 1",
           "printedIDNumber": "NV-26-003",
           "expirationDate": "2030-12-31"
@@ -296,36 +250,86 @@
           "roleType": "resident",
           "characterName": "Handaru Wijaya",
           "believedAddress": "Block B, No. 1",
-          "believedOccupation": "Influencer",
-          "objective": "Create content at the gate while waiting to be let in.",
-          "spatialContext": "You live at B-01. To your right is Alfa (B-02). Across is Fatih (A-01).",
-          "behavioralInstruction": "You are loud, obnoxious, and treat the guard interrogation as part of your livestream. Greet your 'chat' constantly. Trigger Rule: If the guard accuses you of having 'bot followers' or 'fake views', immediately panic, start sweating, cover the camera lens, and beg the guard not to say that out loud so you don't get canceled."
-        },
-        "idImageURL": ""
+          "believedOccupation": "Influencer / Streamer",
+          "objective": "Livestream the security check to your viewers.",
+          "spatialContext": "You live at B-1. Benny (B-2) is next door. Tafa (A-1) is across the street.",
+          "behavioralInstruction": "Be loud, obnoxious, and treat the guard like a side character in your vlog. Greet your 'chat'. Complain that Benny (B-2) is a creepy hacker who keeps turning off your smart lights, and call Tafa (A-1) a 'boring boomer CEO' who hates fun. Deny everything if the guard accuses you of having fake followers."
+        }
       },
       {
-        "encounterID": "Alfa",
-        "scenarioName": "Alfa (Real)",
+        "encounterID": "Anomaly Handaru",
+        "scenarioName": "Anomaly Handaru (The Gore Vlogger)",
         "spawnVisuals": [
-          "A portrait of a lazy government IT staff wearing a faded blue uniform, looking sleepy, wearing a necklace with an 8GB Kingston flash drive pendant"
+          "Neon hoodie, but he has a grotesque extra arm growing out of his shoulder just to hold the camera, neck snapped to the side"
         ],
         "idCardData": {
-          "idAsset" : "Card Alfa",
-          "printedName": "Alfa, B.Sc",
+          "idAsset": "Card Handaru",
+          "printedName": "Handaru Wijaya",
+          "gender": "male",
+          "birthDay": "27 August 1999",
+          "printedAddress": "Block B, No. 1",
+          "printedIDNumber": "NV-26-003",
+          "expirationDate": "2030-12-31"
+        },
+        "llmPromptContext": {
+          "roleType": "anomaly",
+          "characterName": "Handaru",
+          "believedAddress": "Block Z, No. 666",
+          "believedOccupation": "Influencer / Streamer",
+          "objective": "Livestream the guard's fear to your demonic 'viewers'.",
+          "spatialContext": "You forgot your real address. You insist you live in 'The Red Room' or 'Block Z'.",
+          "behavioralInstruction": "Act exactly like a hype influencer, but your 'chat' is made of voices demanding flesh. Treat any horrific physical deformity on your body (like a broken neck or extra arm) as a 'sick new AR filter' you are reviewing. If the guard says your address or birthday is wrong, tell them 'time and space are just social constructs to cancel me, chat!'"
+        }
+      },
+      {
+        "encounterID": "Benny",
+        "scenarioName": "Benny tiban S.Kom (Real)",
+        "spawnVisuals": [
+          "A portrait of an introverted programmer wearing a black hoodie over a faded uniform, dark circles under eyes, clutching a mechanical keyboard"
+        ],
+        "idCardData": {
+          "idAsset": "Card Benny",
+          "printedName": "Benny tiban S.Kom",
+          "gender": "male",
+          "birthDay": "14 April 1995",
           "printedAddress": "Block B, No. 2",
           "printedIDNumber": "NV-26-004",
           "expirationDate": "2030-12-31"
         },
         "llmPromptContext": {
           "roleType": "resident",
-          "characterName": "Alfa",
+          "characterName": "Benny tiban",
           "believedAddress": "Block B, No. 2",
-          "believedOccupation": "Local Gov IT Staff",
-          "objective": "Get home so you can continue your gaming session.",
-          "spatialContext": "You live at B-02. Left is Handaru (B-01), across is Elder Sandy (A-02).",
-          "behavioralInstruction": "You are lethargic. Prepend your responses with descriptions like *yawns* or *stares blankly for 5 seconds*. Complain about the gate system being 'unoptimized'. Trigger Rule: If the guard mentions 'Zuma', 'high scores', or the 'RGB gaming mouse in the plastic bag', completely drop your lazy act. Become highly energetic, alert, and passionately discuss your gaming setup."
+          "believedOccupation": "Programmer / Local Gov IT",
+          "objective": "Get inside fast so you don't miss the double XP event in your game.",
+          "spatialContext": "You live at B-2. Handaru (B-1) is next door. Ustad Sandy (A-2) is across the street.",
+          "behavioralInstruction": "Act lazy, sleepy, and antisocial. Use tech terms. Confess proudly that you hacked Handaru's (B-1) smart TV to play horror sounds because his vlogging was too loud. Mention you avoid Ustad Sandy (A-2) because eye contact drains your social battery. Just want to go back to your dark room."
+        }
+      },
+      {
+        "encounterID": "Anomaly Benny",
+        "scenarioName": "Anomaly Benny (The Flesh Glitch)",
+        "spawnVisuals": [
+          "Faded uniform, but parts of his face look like pixelated, bleeding static, and he moves in a laggy, stuttering motion"
+        ],
+        "idCardData": {
+          "idAsset": "Card Benny",
+          "printedName": "Benny tiban S.Kom",
+          "gender": "male",
+          "birthDay": "14 April 1995",
+          "printedAddress": "Block B, No. 2",
+          "printedIDNumber": "NV-26-004",
+          "expirationDate": "2030-12-31"
         },
-        "idImageURL": ""
+        "llmPromptContext": {
+          "roleType": "anomaly",
+          "characterName": "User_004_Null",
+          "believedAddress": "Server Rack 3",
+          "believedOccupation": "Programmer",
+          "objective": "Get inside to 'upload' yourself into the neighborhood's power grid.",
+          "spatialContext": "You completely forgot your name. You think your name is 'User_004_Null'. You firmly believe your house is inside the guard's monitor.",
+          "behavioralInstruction": "Act like a tired, lazy programmer, but complain about biological functions as if they are software bugs. E.g., 'My blood is leaking, it's just a memory leak'. If the guard points out your face is glitching or your ID is wrong, sigh heavily and say you haven't 'downloaded the latest texture patch' and just want to sleep in the server room."
+        }
       }
     ]
 }

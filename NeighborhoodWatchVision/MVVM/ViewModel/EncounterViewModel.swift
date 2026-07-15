@@ -82,11 +82,7 @@ public class EncounterViewModel {
             logText += "\n[Warning] Wait, the AI model is not ready yet!"
             return
         }
-//        guard let encounter = activeEncounter else {
-//            logText += "\n[Warning] No one is in front of the guard booth."
-//            return
-//        }
-        
+
         isNPCThinking = true
         npcDialogue = "" // Bersihkan teks lama untuk efek streaming baru
         logText += "\n[Guard/Player]: \(playerSpeech)"
@@ -108,6 +104,8 @@ public class EncounterViewModel {
             - Printed Address: \(idCard.printedAddress)
             - ID Number: \(idCard.printedIDNumber)
             - Expiration Date: \(idCard.expirationDate)
+            - Gender: \(idCard.gender)
+            - birthDay: \(idCard.birthDay)
             
             ### CHARACTER PROFILE & BELIEFS
             - Claimed Name: \(context.characterName)

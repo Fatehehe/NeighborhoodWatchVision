@@ -10,7 +10,7 @@
 
 def Xform "Root"
 {
-    reorder nameChildren = ["Pos_Satpam", "Mat_Bench", "Mat_Table", "Mat_Lamp", "Mat_GreenButton", "Mat_RedButton", "Mat_PosSatpam"]
+    reorder nameChildren = ["Pos_Satpam", "Mat_Bench", "Mat_Table", "Mat_Lamp", "Mat_GreenButton", "Mat_RedButton", "Mat_PosSatpam", "BGM"]
     def "Pos_Satpam" (
         active = true
         references = @../Mesh/Pos_Satpam.usdc@
@@ -163,7 +163,7 @@ def Xform "Root"
         references = @../Materials/PBR_Material.usda@</Root/UnlitMaterial>
     )
     {
-        asset inputs:BakedTexture = @../Texture/PosSatpam/Pos_Satpam_Table_TX_BaseColor.1001 1.png@
+        asset inputs:BakedTexture = @../Texture/PosSatpam/Pos_Satpam_Table_TX_BaseColor.1001 2.png@
         token outputs:mtlx:surface
         token outputs:realitykit:vertex
         token outputs:surface.connect = </Root/Mat_Table/UsdPreviewSurface.outputs:surface>
@@ -241,6 +241,75 @@ def Xform "Root"
         {
             uniform token info:id = "UsdPreviewSurface"
             token outputs:surface
+        }
+    }
+
+    def RealityKitComponent "AudioLibrary"
+    {
+        uniform token info:id = "RealityKit.AudioLibrary"
+
+        def RealityKitDict "resources"
+        {
+            string[] keys = ["freesound_community-night-ambience-17064.mp3"]
+            rel values = </Root/freesound_community_night_ambience_17064_mp3>
+        }
+    }
+
+    def RealityKitAudioFile "freesound_community_night_ambience_17064_mp3"
+    {
+        uniform asset file = @../Audio/freesound_community-night-ambience-17064.mp3@
+        uniform bool shouldLoop = 1
+    }
+
+    def RealityKitTimeline "BGM"
+    {
+        def RealityKitTrack "Track"
+        {
+            def RealityKitAction "Play_Audio"
+            {
+                string actionKind = "audio"
+                string audioResourceName = "freesound_community-night-ambience-17064.mp3"
+                bool controlPlayback = 1
+                double duration = 180.072
+                uniform token info:id = "34083B26-61E0-4804-A43B-60D18983D465"
+                double loopCount = 0
+                double startTime = 0
+                rel target = </Root>
+
+                def RealityKitStruct "handoffType"
+                {
+                }
+            }
+        }
+    }
+
+    def RealityKitComponent "RCP_BehaviorsContainer"
+    {
+        rel behaviors = </Root/OnAddedToScene>
+        uniform token info:id = "RCP.BehaviorsContainer"
+    }
+
+    def Preliminary_Behavior "OnAddedToScene"
+    {
+        rel actions = </Root/OnAddedToScene/Action>
+        uniform bool exclusive
+        rel triggers = </Root/OnAddedToScene/Trigger>
+
+        def Preliminary_Trigger "Trigger"
+        {
+            rel affectedObjects = </Root>
+            token info:id = "SceneTransition"
+        }
+
+        def Preliminary_Action "Action"
+        {
+            rel affectedObjects = </Root>
+            rel animationLibraryKey = </Root/BGM>
+            rel animationLibraryKeyOverrideKey = </Root/OnAddedToScene/Trigger>
+            token info:id = "PlayTimeline"
+            int loops = 0
+            int performCount = 1
+            token type = "serial"
         }
     }
 }

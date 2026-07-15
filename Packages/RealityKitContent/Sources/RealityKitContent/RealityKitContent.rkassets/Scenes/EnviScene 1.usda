@@ -782,7 +782,7 @@ def Xform "Root" (
 }
 
 def Cube "Cube_1" (
-    active = true
+    active = false
     prepend apiSchemas = ["MaterialBindingAPI"]
 )
 {

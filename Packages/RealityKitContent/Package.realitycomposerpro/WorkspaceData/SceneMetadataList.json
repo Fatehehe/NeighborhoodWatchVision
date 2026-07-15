@@ -1080,6 +1080,27 @@
       }
     ]
   },
+  "6E7E09CB-8FD8-41BE-B517-B031367D19D6" : {
+    "objectMetadataList" : [
+      [
+        "6E7E09CB-8FD8-41BE-B517-B031367D19D6",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "6E7E09CB-8FD8-41BE-B517-B031367D19D6",
+        "Root",
+        "ID_Card"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
   "7392CD47-E9AE-4BFF-A2E0-48E50AA3C29C" : {
     "objectMetadataList" : [
       [
@@ -1297,6 +1318,27 @@
       [
         "7392CD47-E9AE-4BFF-A2E0-48E50AA3C29C",
         "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "8349D0F1-6E36-43FA-AE1A-47EEC6240AA8" : {
+    "objectMetadataList" : [
+      [
+        "8349D0F1-6E36-43FA-AE1A-47EEC6240AA8",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "8349D0F1-6E36-43FA-AE1A-47EEC6240AA8",
+        "Root",
+        "ID_Card"
       ],
       {
         "isExpanded" : true,
@@ -1555,6 +1597,16 @@
       [
         "9F1E47D5-92C3-4E1F-9D09-483466625824",
         "Root",
+        "BGM",
+        "Track"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "9F1E47D5-92C3-4E1F-9D09-483466625824",
+        "Root",
         "Pos_Satpam"
       ],
       {
@@ -1574,6 +1626,15 @@
         "Root",
         "Pos_Satpam",
         "Whiteboard"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "9F1E47D5-92C3-4E1F-9D09-483466625824",
+        "Root",
+        "BGM"
       ],
       {
         "isExpanded" : true,
@@ -2111,6 +2172,27 @@
       }
     ]
   },
+  "D4E841C1-AB42-4158-BB12-527A2D1F0679" : {
+    "objectMetadataList" : [
+      [
+        "D4E841C1-AB42-4158-BB12-527A2D1F0679",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "D4E841C1-AB42-4158-BB12-527A2D1F0679",
+        "Root",
+        "ID_Card"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
   "D560BB77-AAF3-4BDE-B7C4-989332A4688B" : {
     "objectMetadataList" : [
 
@@ -2141,6 +2223,27 @@
   "DBB2D800-D8AA-457E-8BB1-18A4020A9954" : {
     "objectMetadataList" : [
 
+    ]
+  },
+  "DCC65A1C-286E-4AA4-97E4-23ED3EA5EC9C" : {
+    "objectMetadataList" : [
+      [
+        "DCC65A1C-286E-4AA4-97E4-23ED3EA5EC9C",
+        "Root",
+        "ID_Card"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "DCC65A1C-286E-4AA4-97E4-23ED3EA5EC9C",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
     ]
   },
   "E09E4BBE-E5AA-4D52-A175-672D46998513" : {

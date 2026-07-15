@@ -20,7 +20,7 @@ def Xform "Root"
 
         over "Mat_card"
         {
-            asset inputs:BakedTexture = @../Texture/Cards/ID_Card_ID_Card_Alfa_BaseColor.1001.png@
+            asset inputs:BakedTexture = @../Texture/Cards/ID_Card_ID_Card_Alfa_BaseColor.1001 2.png@
         }
     }
 }

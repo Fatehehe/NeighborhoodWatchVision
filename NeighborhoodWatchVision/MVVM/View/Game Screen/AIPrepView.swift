@@ -15,6 +15,7 @@ struct AIPrepView: View {
     var body: some View {
         VStack(spacing: 30) {
             
+            // Header
             VStack(spacing: 12) {
                 Image(systemName: "shield.righthalf.filled")
                     .font(.system(size: 60))
@@ -33,21 +34,20 @@ struct AIPrepView: View {
             
             Group {
                 if model.encounterViewModel.isLoading {
+                    // State 1: Sedang Loading / Download
                     VStack(spacing: 16) {
                         Text("Initiating AI Model...")
                             .font(.headline)
                         
-                        ProgressView(value: model.encounterViewModel.downloadProgress, total: 1.0)
+                        // Disamakan dengan ControlPanelView agar UI update lebih responsif
+                        VStack(spacing: 10) {
+                            ProgressView(
+                                model.encounterViewModel.loadingStatus.isEmpty ? "Preparing data..." : model.encounterViewModel.loadingStatus,
+                                value: model.encounterViewModel.downloadProgress,
+                                total: 1.0
+                            )
                             .progressViewStyle(.linear)
                             .tint(.blue)
-                        
-                        HStack {
-                            Text(model.encounterViewModel.loadingStatus.isEmpty ? "Preparing data..." : model.encounterViewModel.loadingStatus)
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                                .lineLimit(1)
-                            
-                            Spacer()
                             
                             Text("\(Int(model.encounterViewModel.downloadProgress * 100))%")
                                 .font(.caption.bold())
@@ -60,6 +60,7 @@ struct AIPrepView: View {
                     .frame(maxWidth: 400)
                     
                 } else if !model.encounterViewModel.isModelLoaded {
+                    // State 2: Belum Download
                     VStack(spacing: 16) {
                         Text("The AI system is currently offline. Turn on the system to start your guard shift.")
                             .font(.callout)
@@ -67,11 +68,11 @@ struct AIPrepView: View {
                             .foregroundStyle(.secondary)
                             .padding(.horizontal, 20)
                         
-                        Button(action: {
+                        Button {
                             Task {
                                 await model.encounterViewModel.loadModel()
                             }
-                        }) {
+                        } label: {
                             HStack(spacing: 10) {
                                 Image(systemName: "power")
                                 Text("Turn On AI System")
@@ -87,6 +88,7 @@ struct AIPrepView: View {
                     .frame(maxWidth: 400)
                     
                 } else {
+                    // State 3: Selesai Download
                     VStack(spacing: 24) {
                         HStack(spacing: 10) {
                             Image(systemName: "checkmark.seal.fill")
@@ -111,8 +113,9 @@ struct AIPrepView: View {
                     }
                 }
             }
-            .animation(.easeInOut(duration: 0.4), value: model.encounterViewModel.isLoading)
-            .animation(.easeInOut(duration: 0.4), value: model.encounterViewModel.isModelLoaded)
+            // Mengurangi durasi animasi agar tidak bentrok dengan update progress bar yang cepat
+            .animation(.easeInOut(duration: 0.2), value: model.encounterViewModel.isLoading)
+            .animation(.easeInOut(duration: 0.2), value: model.encounterViewModel.isModelLoaded)
         }
         .padding(50)
         .frame(width: 600, height: 500)
